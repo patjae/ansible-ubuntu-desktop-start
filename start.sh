@@ -17,7 +17,7 @@ read -e -p "Enter your Ubuntu username: ($SUDO_USER) " -i $SUDO_USER user_login
 
 # Git/Github credentials
 echo -e "\n"
-echo "Enter your Git/github global credentials:"
+echo "Enter your Git/github global attributes to be set:"
 read -e -p "Enter Git Name: " git_user_name
 read -e -p "Enter Git Email: " git_user_email
 
@@ -57,6 +57,8 @@ sudo apt upgrade -y
 sudo apt install ansible git -y
 
 # ansible pull the playbook
+echo "You will be asked for the git repository GitHub creadentials, which are usually your email and a token as password"
+echo "You defined the Git Name and Git Email, which are used for the global settings but NOT to authenticate in GitHub as we use a private repo!"
 ansible-pull -U 'https://github.com/patjae/ansible-ubuntu-desktop.git' \
   -e "user_login=$user_login" \
   -e "cron_job_name='first install'" \
