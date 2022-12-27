@@ -61,6 +61,9 @@ sudo apt upgrade -y
 # install ansible & git
 sudo apt install ansible git -y
 
+# write token
+echo $git_pull_token > /root/ansible-ubuntu-desktop-pull-token
+
 # ansible pull the playbook
 echo "You might be asked for the git repository GitHub creadentials, which are usually your email and a token as password"
 echo "You defined the Git Name and Git Email, which are used for the global settings but NOT to authenticate in GitHub as we use a private repo!"
