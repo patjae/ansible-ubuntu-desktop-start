@@ -70,4 +70,5 @@ ansible-pull -U https://$OAUTH_TOKEN:x-oauth-basic@github.com/patjae/ansible-ubu
   -e "user_login=$user_login" \
   -e "cron_job_name='first install'" \
   -e "git_user_name=$git_user_name" \
-  -e "git_user_email=$git_user_email"
+  -e "git_user_email=$git_user_email" \
+  --tags "always,base,desktop"
