@@ -66,8 +66,8 @@ echo "You might be asked for the git repository GitHub creadentials, which are u
 echo "You defined the Git Name and Git Email, which are used for the global settings but NOT to authenticate in GitHub as we use a private repo!"
 echo "We try to execute ansible-pull with git_pull_token as OAUTH_TOKEN!"
 export OAUTH_TOKEN=$git_pull_token
-ansible-pull -U 'https://$OAUTH_TOKEN:x-oauth-basic@github.com/patjae/ansible-ubuntu-desktop.git' \
+ansible-pull -U https://$OAUTH_TOKEN:x-oauth-basic@github.com/patjae/ansible-ubuntu-desktop.git \
   -e "user_login=$user_login" \
   -e "cron_job_name='first install'" \
   -e "git_user_name=$git_user_name" \
-  -e "git_user_email=$git_user_email" \
+  -e "git_user_email=$git_user_email"
