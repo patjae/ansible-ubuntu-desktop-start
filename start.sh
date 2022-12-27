@@ -63,6 +63,7 @@ sudo apt install ansible git -y
 
 # write token
 echo $git_pull_token > /root/ansible-ubuntu-desktop-pull-token
+chmod 600 root/ansible-ubuntu-desktop-pull-token
 
 # ansible pull the playbook
 echo "You might be asked for the git repository GitHub creadentials, which are usually your email and a token as password"
